@@ -1,0 +1,98 @@
+{
+  "_version": "1.81.0",
+  "sap.app": {
+    "id": "jfirstproject",
+    "type": "application",
+    "i18n": "i18n/i18n.properties",
+    "applicationVersion": {
+      "version": "0.0.1"
+    },
+    "title": "{{appTitle}}",
+    "description": "{{appDescription}}",
+    "resources": "resources.json",
+    "sourceTemplate": {
+      "id": "@sap/generator-fiori:basic",
+      "version": "1.20.2",
+      "toolsId": "562d64fc-d946-4b04-a31f-665441412474"
+    }
+  },
+  "sap.ui": {
+    "technology": "UI5",
+    "icons": {
+      "icon": "",
+      "favIcon": "",
+      "phone": "",
+      "phone@2": "",
+      "tablet": "",
+      "tablet@2": ""
+    },
+    "deviceTypes": {
+      "desktop": true,
+      "tablet": true,
+      "phone": true
+    }
+  },
+  "sap.ui5": {
+    "flexEnabled": true,
+    "dependencies": {
+      "minUI5Version": "1.144.1",
+      "libs": {
+        "sap.m": {},
+        "sap.ui.core": {}
+      }
+    },
+    "contentDensities": {
+      "compact": true,
+      "cozy": true
+    },
+    "models": {
+      "i18n": {
+        "type": "sap.ui.model.resource.ResourceModel",
+        "settings": {
+          "bundleName": "jfirstproject.i18n.i18n"
+        }
+      }
+    },
+    "resources": {
+      "css": [
+        {
+          "uri": "css/style.css"
+        }
+      ]
+    },
+    "routing": {
+      "config": {
+        "routerClass": "sap.m.routing.Router",
+        "controlAggregation": "pages",
+        "controlId": "app",
+        "transition": "slide",
+        "type": "View",
+        "viewType": "XML",
+        "path": "jfirstproject.view",
+        "async": true,
+        "viewPath": "jfirstproject.view"
+      },
+      "routes": [
+        {
+          "name": "RouteJFirstView",
+          "pattern": ":?query:",
+          "target": [
+            "TargetJFirstView"
+          ]
+        }
+      ],
+      "targets": {
+        "TargetJFirstView": {
+          "id": "JFirstView",
+          "name": "JFirstView"
+        }
+      }
+    },
+    "rootView": {
+      "viewName": "jfirstproject.view.App",
+      "type": "XML",
+      "id": "App",
+      "async": true
+    }
+  }
+}
